@@ -36,10 +36,9 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu_salir_ = new javax.swing.JMenuItem();
         menuRegistrar_ = new javax.swing.JMenu();
         jMenu_Registrarse_ = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu_consultar_ = new javax.swing.JMenuItem();
+        jMenu_Ajustes = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -93,14 +92,14 @@ public class vistaTienda extends javax.swing.JFrame {
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(escritorioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(escritorioLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel1)))
-                .addContainerGap(335, Short.MAX_VALUE))
+                        .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1))))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
 
         getContentPane().add(escritorio);
@@ -133,36 +132,26 @@ public class vistaTienda extends javax.swing.JFrame {
         });
         menuRegistrar_.add(jMenu_Registrarse_);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
-        jMenuItem2.setText("Modificar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_consultar_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_consultar_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reportes.png"))); // NOI18N
+        jMenu_consultar_.setText("Consultar");
+        jMenu_consultar_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenu_consultar_ActionPerformed(evt);
             }
         });
-        menuRegistrar_.add(jMenuItem2);
+        menuRegistrar_.add(jMenu_consultar_);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        jMenuItem3.setText("Eliminar");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_Ajustes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
+        jMenu_Ajustes.setText("Ajustes");
+        jMenu_Ajustes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenu_AjustesActionPerformed(evt);
             }
         });
-        menuRegistrar_.add(jMenuItem3);
+        menuRegistrar_.add(jMenu_Ajustes);
         menuRegistrar_.add(jSeparator1);
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reportes.png"))); // NOI18N
-        jMenuItem4.setText("Consultar");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        menuRegistrar_.add(jMenuItem4);
 
         jMenuBar1.add(menuRegistrar_);
 
@@ -296,9 +285,12 @@ public class vistaTienda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    private void jMenu_consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_consultar_ActionPerformed
+      Frm_ConsultarCliente panel= new Frm_ConsultarCliente(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+      
+    }//GEN-LAST:event_jMenu_consultar_ActionPerformed
 
     private void jMenu_Registrarse_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Registrarse_ActionPerformed
       FrmClientes panel= new FrmClientes(); //mostrar la ventana en el escritorio
@@ -307,13 +299,11 @@ public class vistaTienda extends javax.swing.JFrame {
       
     }//GEN-LAST:event_jMenu_Registrarse_ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void jMenu_AjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_AjustesActionPerformed
+       Frm_AjustesCliente panel= new Frm_AjustesCliente(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+    }//GEN-LAST:event_jMenu_AjustesActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
@@ -395,16 +385,15 @@ public class vistaTienda extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenu_Ajustes;
     private javax.swing.JMenuItem jMenu_Registrarse_;
+    private javax.swing.JMenuItem jMenu_consultar_;
     private javax.swing.JMenuItem jMenu_salir_;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu menuRegistrar_;
