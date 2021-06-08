@@ -37,13 +37,13 @@ public class vistaTienda extends javax.swing.JFrame {
         menuRegistrar_ = new javax.swing.JMenu();
         jMenu_Registrarse_ = new javax.swing.JMenuItem();
         jMenu_consultar_ = new javax.swing.JMenuItem();
-        jMenu_Ajustes = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenu_Ajustes = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu_RegistrarInstrumento_ = new javax.swing.JMenuItem();
+        jMenu_ConsultarInstrumento_ = new javax.swing.JMenuItem();
+        jMenu_editarIstrumentos_ = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -79,33 +79,34 @@ public class vistaTienda extends javax.swing.JFrame {
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
-                .addGap(305, 305, 305)
+                .addGap(566, 566, 566)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
-                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(escritorioLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(escritorioLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))))
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(escritorioLayout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addComponent(jLabel1))
+                        .addGroup(escritorioLayout.createSequentialGroup()
+                            .addGap(43, 43, 43)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
 
         getContentPane().add(escritorio);
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/file.png"))); // NOI18N
         jMenu6.setText("File");
+        jMenu6.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
         jMenu_salir_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenu_salir_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir.png"))); // NOI18N
@@ -121,8 +122,10 @@ public class vistaTienda extends javax.swing.JFrame {
 
         menuRegistrar_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/clientes.png"))); // NOI18N
         menuRegistrar_.setText("Clientes");
+        menuRegistrar_.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
         jMenu_Registrarse_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_Registrarse_.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenu_Registrarse_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
         jMenu_Registrarse_.setText("Registrarse");
         jMenu_Registrarse_.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +136,7 @@ public class vistaTienda extends javax.swing.JFrame {
         menuRegistrar_.add(jMenu_Registrarse_);
 
         jMenu_consultar_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_consultar_.setFont(new java.awt.Font("Rockwell Condensed", 0, 15)); // NOI18N
         jMenu_consultar_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reportes.png"))); // NOI18N
         jMenu_consultar_.setText("Consultar");
         jMenu_consultar_.addActionListener(new java.awt.event.ActionListener() {
@@ -141,8 +145,10 @@ public class vistaTienda extends javax.swing.JFrame {
             }
         });
         menuRegistrar_.add(jMenu_consultar_);
+        menuRegistrar_.add(jSeparator1);
 
         jMenu_Ajustes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_Ajustes.setFont(new java.awt.Font("Rockwell Condensed", 0, 15)); // NOI18N
         jMenu_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
         jMenu_Ajustes.setText("Ajustes");
         jMenu_Ajustes.addActionListener(new java.awt.event.ActionListener() {
@@ -151,59 +157,73 @@ public class vistaTienda extends javax.swing.JFrame {
             }
         });
         menuRegistrar_.add(jMenu_Ajustes);
-        menuRegistrar_.add(jSeparator1);
 
         jMenuBar1.add(menuRegistrar_);
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guitarra.png"))); // NOI18N
         jMenu2.setText("Instrumentos de cuerda y Viento");
+        jMenu2.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
-        jMenuItem5.setText("Registrar");
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
-        jMenuItem6.setText("Modificar");
-        jMenu2.add(jMenuItem6);
-
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        jMenuItem7.setText("Eliminar");
-        jMenu2.add(jMenuItem7);
-
-        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/informesI.png"))); // NOI18N
-        jMenuItem8.setText("Informes");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_RegistrarInstrumento_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_RegistrarInstrumento_.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenu_RegistrarInstrumento_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
+        jMenu_RegistrarInstrumento_.setText("Registrar");
+        jMenu_RegistrarInstrumento_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                jMenu_RegistrarInstrumento_ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem8);
+        jMenu2.add(jMenu_RegistrarInstrumento_);
+
+        jMenu_ConsultarInstrumento_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_ConsultarInstrumento_.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenu_ConsultarInstrumento_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/informesI.png"))); // NOI18N
+        jMenu_ConsultarInstrumento_.setText("Informes");
+        jMenu_ConsultarInstrumento_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_ConsultarInstrumento_ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenu_ConsultarInstrumento_);
+
+        jMenu_editarIstrumentos_.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_editarIstrumentos_.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenu_editarIstrumentos_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
+        jMenu_editarIstrumentos_.setText("Editar");
+        jMenu_editarIstrumentos_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_editarIstrumentos_ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenu_editarIstrumentos_);
+        jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/teclado.png"))); // NOI18N
         jMenu3.setText("Teclados y Pianos");
+        jMenu3.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem9.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
         jMenuItem9.setText("Registrar");
         jMenu3.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem10.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
         jMenuItem10.setText("Modificar");
         jMenu3.add(jMenuItem10);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem11.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
         jMenuItem11.setText("Eliminar");
         jMenu3.add(jMenuItem11);
 
         jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem12.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/informpiano.png"))); // NOI18N
         jMenuItem12.setText("Informes");
         jMenu3.add(jMenuItem12);
@@ -212,8 +232,10 @@ public class vistaTienda extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mircrofono.png"))); // NOI18N
         jMenu4.setText("Sonido y Accesorios");
+        jMenu4.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
         jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem13.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
         jMenuItem13.setText("Registrar");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
@@ -224,6 +246,7 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu4.add(jMenuItem13);
 
         jMenuItem14.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem14.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
         jMenuItem14.setText("Modificar");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
@@ -234,11 +257,13 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu4.add(jMenuItem14);
 
         jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem15.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
         jMenuItem15.setText("Eliminar");
         jMenu4.add(jMenuItem15);
 
         jMenuItem16.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem16.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/informsonido.png"))); // NOI18N
         jMenuItem16.setText("Informes");
         jMenu4.add(jMenuItem16);
@@ -247,13 +272,16 @@ public class vistaTienda extends javax.swing.JFrame {
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/provedores.png"))); // NOI18N
         jMenu5.setText("Proveedores");
+        jMenu5.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
         jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem17.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
         jMenuItem17.setText("Registrar");
         jMenu5.add(jMenuItem17);
 
         jMenuItem18.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem18.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
         jMenuItem18.setText("Modificar");
         jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
@@ -264,11 +292,13 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu5.add(jMenuItem18);
 
         jMenuItem19.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem19.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
         jMenuItem19.setText("Eliminar");
         jMenu5.add(jMenuItem19);
 
         jMenuItem20.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem20.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
         jMenuItem20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
         jMenuItem20.setText("Consultar");
         jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
@@ -305,9 +335,11 @@ public class vistaTienda extends javax.swing.JFrame {
       panel.show();
     }//GEN-LAST:event_jMenu_AjustesActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    private void jMenu_ConsultarInstrumento_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_ConsultarInstrumento_ActionPerformed
+       Frm_ConsultaInstrumentosVyC panel= new Frm_ConsultaInstrumentosVyC(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+    }//GEN-LAST:event_jMenu_ConsultarInstrumento_ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
@@ -328,6 +360,20 @@ public class vistaTienda extends javax.swing.JFrame {
     private void jMenu_salir_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_salir_ActionPerformed
       System.exit(0);
     }//GEN-LAST:event_jMenu_salir_ActionPerformed
+
+    private void jMenu_RegistrarInstrumento_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_RegistrarInstrumento_ActionPerformed
+     FrmInstrumentosdeCuerdayViento panel= new FrmInstrumentosdeCuerdayViento(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+      
+    }//GEN-LAST:event_jMenu_RegistrarInstrumento_ActionPerformed
+
+    private void jMenu_editarIstrumentos_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_editarIstrumentos_ActionPerformed
+       Editar_Instrumentos   panel= new Editar_Instrumentos(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+      
+    }//GEN-LAST:event_jMenu_editarIstrumentos_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,16 +432,16 @@ public class vistaTienda extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuItem jMenu_Ajustes;
+    private javax.swing.JMenuItem jMenu_ConsultarInstrumento_;
+    private javax.swing.JMenuItem jMenu_RegistrarInstrumento_;
     private javax.swing.JMenuItem jMenu_Registrarse_;
     private javax.swing.JMenuItem jMenu_consultar_;
+    private javax.swing.JMenuItem jMenu_editarIstrumentos_;
     private javax.swing.JMenuItem jMenu_salir_;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JMenu menuRegistrar_;
     // End of variables declaration//GEN-END:variables
 }
