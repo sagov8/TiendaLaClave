@@ -8,6 +8,7 @@ public class vistaTienda extends javax.swing.JFrame {
      */
     public vistaTienda() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
@@ -20,9 +21,13 @@ public class vistaTienda extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
+<<<<<<< HEAD
+        jLabel4 = new javax.swing.JLabel();
+=======
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+>>>>>>> 23dceff79a7fb20f120562c72726ec7ac18d3fcb
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
         jMenu_salir_ = new javax.swing.JMenuItem();
@@ -56,6 +61,9 @@ public class vistaTienda extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 48)); // NOI18N
         jLabel2.setText(" LA CLAVE");
 
+<<<<<<< HEAD
+        escritorio.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+=======
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Note-musique-icon.png"))); // NOI18N
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Note-musique-icon.png"))); // NOI18N
@@ -63,12 +71,25 @@ public class vistaTienda extends javax.swing.JFrame {
         escritorio.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+>>>>>>> 23dceff79a7fb20f120562c72726ec7ac18d3fcb
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(419, 419, 419)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(486, Short.MAX_VALUE))
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+=======
                 .addGap(442, 442, 442)
                 .addComponent(jLabel3)
                 .addGap(28, 28, 28)
@@ -90,6 +111,7 @@ public class vistaTienda extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(436, Short.MAX_VALUE))
+>>>>>>> 23dceff79a7fb20f120562c72726ec7ac18d3fcb
         );
 
         getContentPane().add(escritorio);
@@ -437,9 +459,13 @@ public class vistaTienda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
+<<<<<<< HEAD
+    private javax.swing.JLabel jLabel4;
+=======
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+>>>>>>> 23dceff79a7fb20f120562c72726ec7ac18d3fcb
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
