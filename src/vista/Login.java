@@ -5,6 +5,7 @@
  */
 package vista;
 
+import control.GestionarBase;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,14 +13,21 @@ import javax.swing.JOptionPane;
  * @author Estudiante
  */
 public class Login extends javax.swing.JFrame {
+    
+     GestionarBase base;
+    String sql;
+    public static boolean rollAdmin=false;
+
+   
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setExtendedState(MAXIMIZED_BOTH);
+      
+        base = new GestionarBase();//Asigna memoria
+        this.setLocationRelativeTo(null);//Permite que la ventana aparezca en el centro de la pantalla
     }
 
     /**
@@ -128,6 +136,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Algun espacio esta vacio");
         }else{
             if (id.equals("admin") && contraseña.equals("123456")){ //condicionamos el inicio de id y contraseña
+                
                 JOptionPane.showMessageDialog(null,"BIENVENIDO ADMINISTRADOR:");
                 vistaTienda panel=new vistaTienda();// se llama el panel a que se va ingresar con un objeto
                 panel.setVisible(true);//visibilidad del panel

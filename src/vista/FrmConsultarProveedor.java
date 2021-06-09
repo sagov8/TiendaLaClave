@@ -34,7 +34,7 @@ public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jText_Codigo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable_Proveedor = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jB_Consultar = new javax.swing.JButton();
 
@@ -68,8 +68,8 @@ public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(235, 94, 40));
 
-        jTable1.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_Proveedor.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jTable_Proveedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -89,8 +89,8 @@ public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionForeground(new java.awt.Color(235, 94, 40));
-        jScrollPane1.setViewportView(jTable1);
+        jTable_Proveedor.setSelectionForeground(new java.awt.Color(235, 94, 40));
+        jScrollPane1.setViewportView(jTable_Proveedor);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -188,7 +188,7 @@ public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable_Proveedor;
     private javax.swing.JTextField jText_Codigo;
     // End of variables declaration//GEN-END:variables
 }
