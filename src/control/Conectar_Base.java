@@ -14,9 +14,9 @@ public class Conectar_Base {
         Connection conexion;
         //conexion con el driver
         try {
-            Class.forName("como.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             //conectar con la base
-            conexion= DriverManager.getConnection("jdbc:mysql://localhost/bd_tiendalaclave","root","");
+            conexion= DriverManager.getConnection("jdbc:mysql://localhost/bd_tiendalaclave", "root", "Admin123");
             System.out.println("CONEXION CON EXITO");
         } catch (ClassNotFoundException ex) {
             System.out.println("No se encuentra el driver");
