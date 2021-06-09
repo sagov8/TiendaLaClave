@@ -16,7 +16,6 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
      */
     public FrmEditar_Sonido() {
         initComponents();
-      
     }
 
     /**
@@ -134,9 +133,9 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel4)
-                        .addGap(71, 71, 71)
+                        .addGap(55, 55, 55)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(144, 144, 144))))
+                        .addGap(160, 160, 160))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
