@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Estudiante/Documents/GitHub/TiendaLaClave/src/vista/vistaTienda.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/Frm_AjustesCliente.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/FrmClientes.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/Frm_ConsultarCliente.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/control/GestionarBase.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/conexion.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/vistaTienda.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/modelo/Instrumento.java</file>
         </group>
     </open-files>
 </project-private>
