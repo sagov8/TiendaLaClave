@@ -156,7 +156,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(53, 79, 82), 4, true));
 
         jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel4.setText("Id_Instrumento:");
+        jLabel4.setText("Código:");
 
         jLabel10.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
 
@@ -176,10 +176,10 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                         .addGap(69, 69, 69)
                         .addComponent(jLabel10))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(89, 89, 89)
                         .addComponent(jLabel4)
-                        .addGap(28, 28, 28)
-                        .addComponent(jText_Id_Instrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(30, 30, 30)
+                        .addComponent(jText_Id_Instrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -187,10 +187,10 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(28, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jText_Id_Instrumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(33, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jText_Id_Instrumento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(26, 26, 26)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -239,7 +239,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addGap(26, 26, 26)
                         .addComponent(jButton1)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);

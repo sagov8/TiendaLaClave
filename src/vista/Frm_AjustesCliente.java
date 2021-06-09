@@ -40,7 +40,7 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         jText_correo_ = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jText_contraseña_ = new javax.swing.JTextField();
-        jText_idCliente_ = new javax.swing.JTextField();
+        jText_Codigo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jB_Modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
@@ -95,14 +95,14 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel13.setText("Contraseña:");
 
-        jText_idCliente_.addActionListener(new java.awt.event.ActionListener() {
+        jText_Codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jText_idCliente_ActionPerformed(evt);
+                jText_CodigoActionPerformed(evt);
             }
         });
 
         jLabel14.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel14.setText("Id_Cliente:");
+        jLabel14.setText("Código");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -137,7 +137,7 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(336, 336, 336))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jText_idCliente_, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jText_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(193, 193, 193))))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -145,7 +145,7 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jText_idCliente_, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jText_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -234,9 +234,9 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_Nombre_ActionPerformed
 
-    private void jText_idCliente_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_idCliente_ActionPerformed
+    private void jText_CodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_CodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jText_idCliente_ActionPerformed
+    }//GEN-LAST:event_jText_CodigoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -252,10 +252,10 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jText_Codigo;
     private javax.swing.JTextField jText_Nombre_;
     private javax.swing.JTextField jText_apellido_;
     private javax.swing.JTextField jText_contraseña_;
     private javax.swing.JTextField jText_correo_;
-    private javax.swing.JTextField jText_idCliente_;
     // End of variables declaration//GEN-END:variables
 }

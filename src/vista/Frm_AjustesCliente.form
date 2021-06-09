@@ -168,7 +168,7 @@
                                       <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jText_idCliente_" min="-2" pref="102" max="-2" attributes="0"/>
+                                      <Component id="jText_Codigo" min="-2" pref="102" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -182,7 +182,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jText_idCliente_" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="jText_Codigo" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -256,9 +256,9 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jText_contrase&#xf1;a_">
             </Component>
-            <Component class="javax.swing.JTextField" name="jText_idCliente_">
+            <Component class="javax.swing.JTextField" name="jText_Codigo">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jText_idCliente_ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jText_CodigoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
@@ -266,7 +266,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Rockwell Condensed" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Id_Cliente:"/>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
               </Properties>
             </Component>
           </SubComponents>
