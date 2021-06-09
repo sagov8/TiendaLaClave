@@ -96,7 +96,7 @@ public class vistaTienda extends javax.swing.JFrame {
                     .addGroup(escritorioLayout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(jLabel6)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         getContentPane().add(escritorio);

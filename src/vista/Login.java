@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiante
@@ -118,7 +120,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPassword_ContraseñaActionPerformed
 
     private void jB_IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_IniciarSesionActionPerformed
-        // TODO add your handling code here:
+       String id= jText_Usuario.getText();
+        String contraseña= jPassword_Contraseña.getText();
+        
+        if(id.isEmpty() || contraseña.isEmpty()){ //Método que devuelve true en el caso de que el tamaño de la cadena sera 0. En otro caso devuelve false.
+            JOptionPane.showMessageDialog(null,"Algun espacio esta vacio");
+        }else{
+            if (id.equals("admin") && contraseña.equals("123456")){ //condicionamos el inicio de id y contraseña
+                JOptionPane.showMessageDialog(null,"BIENVENIDO ADMINISTRADOR:");
+                vistaTienda panel=new vistaTienda();// se llama el panel a que se va ingresar con un objeto
+                panel.setVisible(true);//visibilidad del panel
+                dispose();
+            }
+        }
     }//GEN-LAST:event_jB_IniciarSesionActionPerformed
 
     /**
