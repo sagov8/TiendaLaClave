@@ -33,7 +33,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         jText_IdCliente_ = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable_Cliente = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -87,8 +87,8 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(235, 94, 40));
 
-        jTable1.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_Cliente.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jTable_Cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -108,8 +108,8 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionForeground(new java.awt.Color(235, 94, 40));
-        jScrollPane2.setViewportView(jTable1);
+        jTable_Cliente.setSelectionForeground(new java.awt.Color(235, 94, 40));
+        jScrollPane2.setViewportView(jTable_Cliente);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -217,7 +217,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable_Cliente;
     private javax.swing.JTextField jText_IdCliente_;
     // End of variables declaration//GEN-END:variables
 }

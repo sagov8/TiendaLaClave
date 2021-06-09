@@ -53,9 +53,9 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu_ConsultarSonido = new javax.swing.JMenuItem();
         jMenu_EditarSonido = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
-        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenu_RegistrarProveedor = new javax.swing.JMenuItem();
+        jMenu_Consultar = new javax.swing.JMenuItem();
+        jMenuI_Ajustes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
@@ -77,9 +77,9 @@ public class vistaTienda extends javax.swing.JFrame {
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addGap(261, 261, 261)
                 .addComponent(jLabel5)
-                .addGap(61, 61, 61)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addContainerGap(373, Short.MAX_VALUE))
         );
@@ -88,15 +88,16 @@ public class vistaTienda extends javax.swing.JFrame {
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(escritorioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(escritorioLayout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addComponent(jLabel5))
                     .addGroup(escritorioLayout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(jLabel6)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(396, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
 
         getContentPane().add(escritorio);
@@ -279,33 +280,38 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu5.setText("Proveedores");
         jMenu5.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
-        jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem17.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
-        jMenuItem17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
-        jMenuItem17.setText("Registrar");
-        jMenu5.add(jMenuItem17);
-
-        jMenuItem20.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem20.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
-        jMenuItem20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
-        jMenuItem20.setText("Consultar");
-        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_RegistrarProveedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_RegistrarProveedor.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenu_RegistrarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
+        jMenu_RegistrarProveedor.setText("Registrar");
+        jMenu_RegistrarProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem20ActionPerformed(evt);
+                jMenu_RegistrarProveedorActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem20);
+        jMenu5.add(jMenu_RegistrarProveedor);
 
-        jMenuItem18.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem18.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
-        jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
-        jMenuItem18.setText("Ajustes");
-        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_Consultar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu_Consultar.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenu_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
+        jMenu_Consultar.setText("Consultar");
+        jMenu_Consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem18ActionPerformed(evt);
+                jMenu_ConsultarActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem18);
+        jMenu5.add(jMenu_Consultar);
+
+        jMenuI_Ajustes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuI_Ajustes.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenuI_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
+        jMenuI_Ajustes.setText("Ajustes");
+        jMenuI_Ajustes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuI_AjustesActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuI_Ajustes);
 
         jMenuBar1.add(jMenu5);
 
@@ -352,13 +358,17 @@ public class vistaTienda extends javax.swing.JFrame {
       panel.show();
     }//GEN-LAST:event_jMenu_EditarSonidoActionPerformed
 
-    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem18ActionPerformed
+    private void jMenuI_AjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuI_AjustesActionPerformed
+      FrmEditarProveedor panel= new FrmEditarProveedor(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+    }//GEN-LAST:event_jMenuI_AjustesActionPerformed
 
-    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem20ActionPerformed
+    private void jMenu_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_ConsultarActionPerformed
+     FrmConsultarProveedor panel= new FrmConsultarProveedor(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+    }//GEN-LAST:event_jMenu_ConsultarActionPerformed
 
     private void jMenu_salir_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_salir_ActionPerformed
       System.exit(0);
@@ -402,6 +412,13 @@ public class vistaTienda extends javax.swing.JFrame {
       escritorio.add(panel);
       panel.show();
     }//GEN-LAST:event_jMenu_ConsultarSonidoActionPerformed
+
+    private void jMenu_RegistrarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_RegistrarProveedorActionPerformed
+      FrmRegistrarProveedor panel= new FrmRegistrarProveedor(); //mostrar la ventana en el escritorio
+      escritorio.add(panel);
+      panel.show();
+                     
+    }//GEN-LAST:event_jMenu_RegistrarProveedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -448,15 +465,15 @@ public class vistaTienda extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuI_Ajustes;
     private javax.swing.JMenuItem jMenu_Ajustes;
+    private javax.swing.JMenuItem jMenu_Consultar;
     private javax.swing.JMenuItem jMenu_ConsultarInstrumento_;
     private javax.swing.JMenuItem jMenu_ConsultarPyT_;
     private javax.swing.JMenuItem jMenu_ConsultarSonido;
     private javax.swing.JMenuItem jMenu_EditarSonido;
     private javax.swing.JMenuItem jMenu_RegistrarInstrumento_;
+    private javax.swing.JMenuItem jMenu_RegistrarProveedor;
     private javax.swing.JMenuItem jMenu_RegistrarSonido;
     private javax.swing.JMenu jMenu_RegistrarSonido_;
     private javax.swing.JMenuItem jMenu_RegistrarTyP_;

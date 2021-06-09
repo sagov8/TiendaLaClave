@@ -45,7 +45,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jText_Id_Instrumento = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable_InstrumentosCuerda = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(173, 181, 189));
@@ -162,8 +162,8 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(235, 94, 40));
 
-        jTable1.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_InstrumentosCuerda.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jTable_InstrumentosCuerda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -183,8 +183,8 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionForeground(new java.awt.Color(235, 94, 40));
-        jScrollPane2.setViewportView(jTable1);
+        jTable_InstrumentosCuerda.setSelectionForeground(new java.awt.Color(235, 94, 40));
+        jScrollPane2.setViewportView(jTable_InstrumentosCuerda);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -294,7 +294,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable_InstrumentosCuerda;
     private javax.swing.JTextField jText_Id_Instrumento;
     private javax.swing.JTextField jText_color;
     private javax.swing.JTextField jText_marca;
