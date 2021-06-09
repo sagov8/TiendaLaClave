@@ -1,17 +1,21 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package vista;
 
-import control.GestionarBase;
-
-
+/**
+ *
+ * @author Estudiante
+ */
 public class FrmClientes extends javax.swing.JInternalFrame {
 
-    GestionarBase base;
-    String sql;
-    
+    /**
+     * Creates new form FrmRegistrar
+     */
     public FrmClientes() {
         initComponents();
-        base = new GestionarBase();
     }
 
     /**
@@ -29,13 +33,13 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txt_nombre = new javax.swing.JTextField();
+        jText_Nombre_ = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txt_apellido = new javax.swing.JTextField();
+        jText_apellido_ = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txt_correo = new javax.swing.JTextField();
+        jText_correo_ = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txt_contraseña = new javax.swing.JTextField();
+        jText_contraseña_ = new javax.swing.JTextField();
         btn_registrar_ = new javax.swing.JButton();
 
         setClosable(true);
@@ -61,27 +65,27 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel3.setText("Nombre:");
 
-        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
+        jText_Nombre_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombreActionPerformed(evt);
+                jText_Nombre_ActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel4.setText("Apellido:");
 
-        txt_apellido.addActionListener(new java.awt.event.ActionListener() {
+        jText_apellido_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_apellidoActionPerformed(evt);
+                jText_apellido_ActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel5.setText("Correo:");
 
-        txt_correo.addActionListener(new java.awt.event.ActionListener() {
+        jText_correo_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_correoActionPerformed(evt);
+                jText_correo_ActionPerformed(evt);
             }
         });
 
@@ -101,10 +105,10 @@ public class FrmClientes extends javax.swing.JInternalFrame {
                     .addComponent(jLabel6))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txt_contraseña, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                    .addComponent(txt_correo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_apellido, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_nombre))
+                    .addComponent(jText_contraseña_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                    .addComponent(jText_correo_, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jText_apellido_, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jText_Nombre_))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -113,21 +117,21 @@ public class FrmClientes extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_nombre))
+                    .addComponent(jText_Nombre_))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_apellido))
+                    .addComponent(jText_apellido_))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txt_correo, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                        .addComponent(jText_correo_, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                         .addGap(2, 2, 2))
                     .addComponent(jLabel5))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jText_contraseña_, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2))
                     .addComponent(jLabel6))
                 .addContainerGap())
@@ -183,25 +187,21 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
+    private void jText_Nombre_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_Nombre_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_nombreActionPerformed
+    }//GEN-LAST:event_jText_Nombre_ActionPerformed
 
     private void btn_registrar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrar_ActionPerformed
-        base.conectar();
-        sql = "insert into cliente(nombre, apellidos, correo, password)values('"
-                + txt_nombre.getText()+"', '"+txt_apellido.getText()
-                +"', '"+txt_correo.getText()+"', '"+txt_contraseña.getText();
-        base.ejecutarSentencia(sql);
+        // TODO add your handling code here:
     }//GEN-LAST:event_btn_registrar_ActionPerformed
 
-    private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
+    private void jText_correo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_correo_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_correoActionPerformed
+    }//GEN-LAST:event_jText_correo_ActionPerformed
 
-    private void txt_apellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_apellidoActionPerformed
+    private void jText_apellido_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_apellido_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_apellidoActionPerformed
+    }//GEN-LAST:event_jText_apellido_ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -215,9 +215,9 @@ public class FrmClientes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JTextField txt_apellido;
-    private javax.swing.JTextField txt_contraseña;
-    private javax.swing.JTextField txt_correo;
-    private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField jText_Nombre_;
+    private javax.swing.JTextField jText_apellido_;
+    private javax.swing.JTextField jText_contraseña_;
+    private javax.swing.JTextField jText_correo_;
     // End of variables declaration//GEN-END:variables
 }

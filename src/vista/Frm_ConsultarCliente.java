@@ -1,16 +1,21 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package vista;
 
-import control.GestionarBase;
-
+/**
+ *
+ * @author Estudiante
+ */
 public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
 
-    GestionarBase base;
-    String sql;
-    
+    /**
+     * Creates new form Frm_ConsultarCliente
+     */
     public Frm_ConsultarCliente() {
         initComponents();
-        base = new GestionarBase();
     }
 
     /**
@@ -25,13 +30,13 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txt_IDcliente = new javax.swing.JTextField();
+        jText_IdCliente_ = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jText_consultar_ = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        BTN_Consultar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -48,9 +53,9 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel3.setText("Id_Cliente:");
 
-        txt_IDcliente.addActionListener(new java.awt.event.ActionListener() {
+        jText_IdCliente_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_IDclienteActionPerformed(evt);
+                jText_IdCliente_ActionPerformed(evt);
             }
         });
 
@@ -62,7 +67,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                 .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(txt_IDcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jText_IdCliente_, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
@@ -72,7 +77,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txt_IDcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jText_IdCliente_, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -107,13 +112,13 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador.png"))); // NOI18N
 
-        BTN_Consultar.setBackground(new java.awt.Color(235, 94, 40));
-        BTN_Consultar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        BTN_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultar.png"))); // NOI18N
-        BTN_Consultar.setText("Consultar");
-        BTN_Consultar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(235, 94, 40));
+        jButton1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultar.png"))); // NOI18N
+        jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_ConsultarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -136,7 +141,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BTN_Consultar)
+                        .addComponent(jButton1)
                         .addContainerGap(20, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
@@ -159,7 +164,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                         .addGap(25, 25, 25))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(104, 104, 104)
-                        .addComponent(BTN_Consultar)
+                        .addComponent(jButton1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -168,19 +173,17 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_IDclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_IDclienteActionPerformed
+    private void jText_IdCliente_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_IdCliente_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_IDclienteActionPerformed
+    }//GEN-LAST:event_jText_IdCliente_ActionPerformed
 
-    private void BTN_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ConsultarActionPerformed
-        base.conectar();
-        sql = ("select from cliente where id_cliente = "+txt_IDcliente.getText());
-        base.ejecutarSentencia(sql);
-    }//GEN-LAST:event_BTN_ConsultarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BTN_Consultar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -188,7 +191,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jText_IdCliente_;
     private javax.swing.JTextArea jText_consultar_;
-    private javax.swing.JTextField txt_IDcliente;
     // End of variables declaration//GEN-END:variables
 }
