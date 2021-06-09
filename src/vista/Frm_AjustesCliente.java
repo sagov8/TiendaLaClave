@@ -5,17 +5,20 @@
  */
 package vista;
 
+import control.GestionarBase;
+import javax.swing.text.JTextComponent;
+
 /**
  *
  * @author Estudiante
  */
 public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Frm_AjustesCliente
-     */
+    GestionarBase base;
+    String sql;
     public Frm_AjustesCliente() {
         initComponents();
+        base = new GestionarBase();
     }
 
     /**
@@ -167,11 +170,21 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         jB_Modificar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jB_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
         jB_Modificar.setText("Modificar");
+        jB_Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_ModificarActionPerformed(evt);
+            }
+        });
 
         btn_eliminar.setBackground(new java.awt.Color(235, 94, 40));
         btn_eliminar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         btn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
         btn_eliminar.setText("Eliminar");
+        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,6 +250,24 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
     private void jText_CodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_CodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_CodigoActionPerformed
+
+    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
+        base.conectar();
+        sql="delete from cliente where id_cliente = " + jText_Codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
+    }//GEN-LAST:event_btn_eliminarActionPerformed
+
+    private void jB_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ModificarActionPerformed
+        base.conectar();
+        sql="update cliente set nombre='"+ jText_Nombre_.getText()
+                +"', apellidos= '"+jText_apellido_.getText()
+                +"', correo= '"+jText_correo_.getText()
+                +"', password= '"+jText_contraseña_.getText()
+                +"' where id_cliente= "+jText_Codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
+    }//GEN-LAST:event_jB_ModificarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

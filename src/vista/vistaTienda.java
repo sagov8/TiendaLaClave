@@ -5,17 +5,19 @@
  */
 package vista;
 
+import control.GestionarBase;
+
 /**
  *
  * @author sagov8
  */
 public class vistaTienda extends javax.swing.JFrame {
 
-    /**
-     * Creates new form vistaTienda
-     */
+    GestionarBase base;
+    String sql;
     public vistaTienda() {
         initComponents();
+        base = new GestionarBase();
     }
 
     /**

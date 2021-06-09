@@ -5,17 +5,21 @@
  */
 package vista;
 
+import control.GestionarBase;
+
 /**
  *
  * @author Estudiante
  */
 public class FrmClientes extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmRegistrar
-     */
+    GestionarBase base;
+    String sql;
     public FrmClientes() {
         initComponents();
+        base = new GestionarBase();
+        
+        
     }
 
     /**
@@ -192,7 +196,14 @@ public class FrmClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jText_Nombre_ActionPerformed
 
     private void btn_registrar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrar_ActionPerformed
-        // TODO add your handling code here:
+   
+        base.conectar();
+        sql = "insert into cliente(nombre, apellidos, correo, password) values('"
+                +jText_Nombre_.getText()+"', '"
+                +jText_apellido_.getText()+"', '"
+                +jText_correo_.getText()+"', '"
+                +jText_contraseña_.getText()+"')";
+        base.ejecutarSentencia(sql);
     }//GEN-LAST:event_btn_registrar_ActionPerformed
 
     private void jText_correo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_correo_ActionPerformed

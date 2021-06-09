@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
-/**
- *
- * @author Estudiante
- */
+import control.GestionarBase;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import modelo.Cliente;
+
+
 public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Frm_ConsultarCliente
-     */
+    GestionarBase base;
+    String sql;
     public Frm_ConsultarCliente() {
         initComponents();
+        base = new GestionarBase();
     }
 
     /**
@@ -33,10 +31,10 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         jText_IdCliente_ = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable_clientes = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BTN_Consultar_ = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -87,8 +85,8 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(235, 94, 40));
 
-        jTable1.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_clientes.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jTable_clientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -108,14 +106,14 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionForeground(new java.awt.Color(235, 94, 40));
-        jScrollPane2.setViewportView(jTable1);
+        jTable_clientes.setSelectionForeground(new java.awt.Color(235, 94, 40));
+        jScrollPane2.setViewportView(jTable_clientes);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGap(0, 464, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -138,13 +136,13 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/administrador.png"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(235, 94, 40));
-        jButton1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultar.png"))); // NOI18N
-        jButton1.setText("Consultar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BTN_Consultar_.setBackground(new java.awt.Color(235, 94, 40));
+        BTN_Consultar_.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        BTN_Consultar_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultar.png"))); // NOI18N
+        BTN_Consultar_.setText("Consultar");
+        BTN_Consultar_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BTN_Consultar_ActionPerformed(evt);
             }
         });
 
@@ -167,7 +165,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(BTN_Consultar_)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
@@ -190,7 +188,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
                         .addGap(25, 25, 25))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(104, 104, 104)
-                        .addComponent(jButton1)
+                        .addComponent(BTN_Consultar_)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -203,13 +201,29 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_IdCliente_ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BTN_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_Consultar_ActionPerformed
+        base.conectar();
+        sql = "select * from cliente";
+        List<Cliente> listaClientes = base.consultarTodosClientes(sql);
+        
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("id_cliente");
+        model.addColumn("nombre");
+        model.addColumn("apellidos");
+        model.addColumn("correo");
+        model.addColumn("password");
+        
+        for (Cliente cliente: listaClientes){
+            model.addRow(new Object[]{cliente.getId_cliente(),cliente.getNombre(),
+                cliente.getApellidos(),cliente.getCorreo(),cliente.getPassword()});
+            jTable_clientes.setModel(model);
+        }
+        base.desconectar();         
+    }//GEN-LAST:event_BTN_Consultar_ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BTN_Consultar_;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -217,7 +231,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable_clientes;
     private javax.swing.JTextField jText_IdCliente_;
     // End of variables declaration//GEN-END:variables
 }
