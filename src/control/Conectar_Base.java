@@ -14,7 +14,7 @@ public class Conectar_Base {
         Connection conexion;
         //conexion con el driver
         try {
-            Class.forName("como.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             //conectar con la base
             conexion= DriverManager.getConnection("jdbc:mysql://localhost/bd_tiendalaclave","root","");
             System.out.println("CONEXION CON EXITO");
