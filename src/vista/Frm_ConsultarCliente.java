@@ -204,7 +204,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
     private void BTN_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_Consultar_ActionPerformed
         base.conectar();
         sql = "select * from cliente";
-        List<Cliente> listaClientes = base.consultarTodosClientes(sql);
+        List<Cliente> listaclientes = base.consultarTodosClientes(sql);
         
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("id_cliente");
@@ -213,7 +213,7 @@ public class Frm_ConsultarCliente extends javax.swing.JInternalFrame {
         model.addColumn("correo");
         model.addColumn("password");
         
-        for (Cliente cliente: listaClientes){
+        for (Cliente cliente: listaclientes){
             model.addRow(new Object[]{cliente.getId_cliente(),cliente.getNombre(),
                 cliente.getApellidos(),cliente.getCorreo(),cliente.getPassword()});
             jTable_clientes.setModel(model);

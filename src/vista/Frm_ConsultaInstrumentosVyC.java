@@ -5,17 +5,26 @@
  */
 package vista;
 
+import control.GestionarBase;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import modelo.Cliente;
+import modelo.Instrumento;
+
 /**
  *
  * @author Estudiante
  */
 public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
-
+    GestionarBase base;
+    String sql;
     /**
      * Creates new form Frm_RegistroInstrumentosVyC
      */
     public Frm_ConsultaInstrumentosVyC() {
         initComponents();
+        
+        base = new GestionarBase();
     }
 
     /**
@@ -45,8 +54,8 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jText_Id_Instrumento = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        jTable_consultarInstrumentoscuerda = new javax.swing.JTable();
+        jBu_consultar = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(173, 181, 189));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(53, 79, 82), 4, true));
@@ -162,29 +171,29 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
 
         jScrollPane2.setBackground(new java.awt.Color(235, 94, 40));
 
-        jTable1.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_consultarInstrumentoscuerda.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jTable_consultarInstrumentoscuerda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Marca", "Color", "Precio"
+                "Código", "Nombre", "Marca", "Color", "Precio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionForeground(new java.awt.Color(235, 94, 40));
-        jScrollPane2.setViewportView(jTable1);
+        jTable_consultarInstrumentoscuerda.setSelectionForeground(new java.awt.Color(235, 94, 40));
+        jScrollPane2.setViewportView(jTable_consultarInstrumentoscuerda);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -220,10 +229,15 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(235, 94, 40));
-        jButton1.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultar.png"))); // NOI18N
-        jButton1.setText("Consultar");
+        jBu_consultar.setBackground(new java.awt.Color(235, 94, 40));
+        jBu_consultar.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        jBu_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultar.png"))); // NOI18N
+        jBu_consultar.setText("Consultar");
+        jBu_consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBu_consultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -238,7 +252,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(jBu_consultar)))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -257,7 +271,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                         .addGap(35, 35, 35)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(jBu_consultar)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -278,9 +292,29 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_precioActionPerformed
 
+    private void jBu_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBu_consultarActionPerformed
+         base.conectar();
+        sql = "select * from instrumentos_cuerda";
+        List<Instrumento> listainstrumento = base.consultarTodosInstrumentosCyV(sql);
+        
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("codigo");
+        model.addColumn("nombre");
+        model.addColumn("marca");
+        model.addColumn("color");
+        model.addColumn("precio");
+        
+        for (Instrumento instrumento: listainstrumento){
+            model.addRow(new Object[]{instrumento.getCodigo(),instrumento.getNombredelInstrumento(),
+                instrumento.getMarca(),instrumento.getColor(),instrumento.getPrecio()});
+            jTable_consultarInstrumentoscuerda.setModel(model);
+        }
+        base.desconectar();  
+    }//GEN-LAST:event_jBu_consultarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBu_consultar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -294,7 +328,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable_consultarInstrumentoscuerda;
     private javax.swing.JTextField jText_Id_Instrumento;
     private javax.swing.JTextField jText_color;
     private javax.swing.JTextField jText_marca;

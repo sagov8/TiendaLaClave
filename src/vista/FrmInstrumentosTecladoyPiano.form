@@ -39,7 +39,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="103" max="32767" attributes="0"/>
               </Group>
@@ -151,7 +151,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -172,7 +172,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jText_color" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="jText_color" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
@@ -232,6 +232,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jText_NombreInstrumento">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jText_NombreInstrumentoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jText_marca">
               <Events>
@@ -277,6 +280,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_registrarInstrumentosPyTActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

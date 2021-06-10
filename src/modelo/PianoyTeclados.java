@@ -3,9 +3,9 @@ package modelo;
 
 /**
  *
- * @author sagov8
+ * @author Estudiante
  */
-public class Instrumento {
+public class PianoyTeclados {
     
     int codigo;
     String nombredelInstrumento;
@@ -13,11 +13,12 @@ public class Instrumento {
     String color;
     int precio;
     
-    public Instrumento(){
-        
-    }
+    
+    public PianoyTeclados(){
+    
+}
 
-    public Instrumento(int codigo, String nombredelInstrumento, String marca, String color, int precio) {
+    public PianoyTeclados(int codigo, String nombredelInstrumento, String marca, String color, int precio) {
         this.codigo = codigo;
         this.nombredelInstrumento = nombredelInstrumento;
         this.marca = marca;
@@ -64,8 +65,6 @@ public class Instrumento {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
-    
     
     
 }

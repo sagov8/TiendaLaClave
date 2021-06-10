@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
+import modelo.Instrumento;
 
 
 public class GestionarBase {
@@ -78,7 +79,7 @@ public class GestionarBase {
     }
     
     public List<Cliente> consultarTodosClientes(String sql) {
-        List<Cliente> listaPagos = new ArrayList<>();
+        List<Cliente> listaClientes = new ArrayList<>();
         try {
             sentencia = conexion.createStatement();
             consulta = sentencia.executeQuery(sql);
@@ -89,6 +90,7 @@ public class GestionarBase {
                 cliente.setApellidos(consulta.getString("apellidos"));
                 cliente.setCorreo(consulta.getString("correo"));
                 cliente.setPassword(consulta.getString("password"));
+                listaClientes.add(cliente);
             }
             conexion.close();
 
@@ -97,7 +99,34 @@ public class GestionarBase {
             JOptionPane.showMessageDialog(null, "Sentencia de consulta mal hecha");
             System.out.println("sql: " + sql);
         }
-        return listaPagos;
+        return listaClientes;
     }
+    
+    public List<Instrumento> consultarTodosInstrumentosCyV(String sql) {
+        List<Instrumento> listaInstrumentosCyV = new ArrayList<>();
+        try {
+            sentencia = conexion.createStatement();
+            consulta = sentencia.executeQuery(sql);
+            while (consulta.next()) {
+                Instrumento instrumento = new Instrumento();
+                instrumento.setCodigo(consulta.getInt("codigo"));
+                instrumento.setNombredelInstrumento(consulta.getString("nombre_Instrumento"));
+                instrumento.setMarca(consulta.getString("marca"));
+                instrumento.setColor(consulta.getString("color"));
+                instrumento.setPrecio(consulta.getInt("precio"));
+                listaInstrumentosCyV.add(instrumento);
+            }
+            conexion.close();
+
+        } catch (SQLException ex) {
+            System.out.println(""+ex);
+            JOptionPane.showMessageDialog(null, "Sentencia de consulta mal hecha");
+            System.out.println("sql: " + sql);
+        }
+        return listaInstrumentosCyV;
+    }
+    
+    
+ 
     
 }

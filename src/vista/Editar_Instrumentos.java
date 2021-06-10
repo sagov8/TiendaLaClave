@@ -5,17 +5,22 @@
  */
 package vista;
 
+import control.GestionarBase;
+
 /**
  *
  * @author Estudiante
  */
 public class Editar_Instrumentos extends javax.swing.JInternalFrame {
+ GestionarBase base;
+    String sql;
 
     /**
      * Creates new form Editar_Instrumentos
      */
     public Editar_Instrumentos() {
         initComponents();
+         base = new GestionarBase();
     }
 
     /**
@@ -161,6 +166,11 @@ public class Editar_Instrumentos extends javax.swing.JInternalFrame {
         jB_ModificarInstrumento.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         jB_ModificarInstrumento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
         jB_ModificarInstrumento.setText("Modificar");
+        jB_ModificarInstrumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_ModificarInstrumentoActionPerformed(evt);
+            }
+        });
 
         jB_EliminarInstrumento.setBackground(new java.awt.Color(235, 94, 40));
         jB_EliminarInstrumento.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
@@ -243,8 +253,22 @@ public class Editar_Instrumentos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jText_precioActionPerformed
 
     private void jB_EliminarInstrumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_EliminarInstrumentoActionPerformed
-        // TODO add your handling code here:
+       base.conectar();
+        sql="delete from instrumentos_cuerda where codigo = " + jText_codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
     }//GEN-LAST:event_jB_EliminarInstrumentoActionPerformed
+
+    private void jB_ModificarInstrumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ModificarInstrumentoActionPerformed
+       base.conectar();
+        sql="update instrumentos_cuerda set nombre_Instrumento='"+jText_nombreInstrumento_ .getText()
+                +"', marca= '"+jText_marca.getText()
+                +"', color= '"+jText_color.getText()
+                +"', precio= '"+jText_precio.getText()
+                +"' where codigo= "+jText_codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
+    }//GEN-LAST:event_jB_ModificarInstrumentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

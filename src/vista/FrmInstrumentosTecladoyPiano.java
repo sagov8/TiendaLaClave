@@ -5,16 +5,20 @@
  */
 package vista;
 
+import control.GestionarBase;
+
 /**
  *
  * @author Estudiante
  */
 public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
-
+ GestionarBase base;
+    String sql;
     /**
      * Creates new form FrmInstrumentosTecladoyPiano
      */
     public FrmInstrumentosTecladoyPiano() {
+         base = new GestionarBase();
         initComponents();
     }
 
@@ -73,6 +77,12 @@ public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel8.setText("Color:");
 
+        jText_NombreInstrumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jText_NombreInstrumentoActionPerformed(evt);
+            }
+        });
+
         jText_marca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jText_marcaActionPerformed(evt);
@@ -120,7 +130,7 @@ public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jText_color, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +147,7 @@ public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jText_color, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jText_color, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
@@ -157,6 +167,11 @@ public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
         jB_registrarInstrumentosPyT.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         jB_registrarInstrumentosPyT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
         jB_registrarInstrumentosPyT.setText("Registrar");
+        jB_registrarInstrumentosPyT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_registrarInstrumentosPyTActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -165,7 +180,7 @@ public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGap(50, 50, 50)
                 .addComponent(jLabel1)
                 .addContainerGap(103, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -217,6 +232,20 @@ public class FrmInstrumentosTecladoyPiano extends javax.swing.JInternalFrame {
     private void jText_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_marcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_marcaActionPerformed
+
+    private void jB_registrarInstrumentosPyTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_registrarInstrumentosPyTActionPerformed
+           base.conectar();
+        sql = "insert into pianos_y_teclados(nombre_Instrumento_, marca_, color_, precio_) values('"
+                +jText_NombreInstrumento.getText()+"', '"
+                +jText_marca.getText()+"', '"
+                +jText_color.getText()+"', '"
+                +jText_precio.getText()+"')";
+        base.ejecutarSentencia(sql);
+    }//GEN-LAST:event_jB_registrarInstrumentosPyTActionPerformed
+
+    private void jText_NombreInstrumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_NombreInstrumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jText_NombreInstrumentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

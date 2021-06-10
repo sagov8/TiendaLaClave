@@ -5,17 +5,22 @@
  */
 package vista;
 
+import control.GestionarBase;
+
 /**
  *
  * @author Estudiante
  */
 public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
+      GestionarBase base;
+    String sql;
 
     /**
      * Creates new form FrmEditar_TecladoyPianos
      */
     public FrmEditar_TecladoyPianos() {
         initComponents();
+         base = new GestionarBase();
     }
 
     /**
@@ -39,7 +44,7 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
         jText_marca = new javax.swing.JTextField();
         jText_color = new javax.swing.JTextField();
         jText_precio = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        jText_Codigo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jBModificarTyP_ = new javax.swing.JButton();
@@ -131,7 +136,7 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jLabel4)
                                         .addGap(38, 38, 38)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jText_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(44, 44, 44)))
                                 .addGap(114, 114, 114))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -145,7 +150,7 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jText_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -169,11 +174,21 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
         jBModificarTyP_.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         jBModificarTyP_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/modificar.png"))); // NOI18N
         jBModificarTyP_.setText("Modificar");
+        jBModificarTyP_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBModificarTyP_ActionPerformed(evt);
+            }
+        });
 
         jBuEliminarTyP_.setBackground(new java.awt.Color(235, 94, 40));
         jBuEliminarTyP_.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
         jBuEliminarTyP_.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
         jBuEliminarTyP_.setText("Eliminar");
+        jBuEliminarTyP_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuEliminarTyP_ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -229,6 +244,24 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_marcaActionPerformed
 
+    private void jBModificarTyP_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarTyP_ActionPerformed
+          base.conectar();
+        sql="update pianos_y_teclados set nombre_Instrumento_='"+jText_NombreInstrumento.getText()
+                +"', marca_= '"+jText_marca.getText()
+                +"', color_= '"+jText_color.getText()
+                +"', precio_= '"+jText_precio.getText()
+                +"' where codigo= "+jText_Codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
+    }//GEN-LAST:event_jBModificarTyP_ActionPerformed
+
+    private void jBuEliminarTyP_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuEliminarTyP_ActionPerformed
+         base.conectar();
+        sql="delete from pianos_y_teclados where codigo = " + jText_Codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
+    }//GEN-LAST:event_jBuEliminarTyP_ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBModificarTyP_;
@@ -243,7 +276,7 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jText_Codigo;
     private javax.swing.JTextField jText_NombreInstrumento;
     private javax.swing.JTextField jText_color;
     private javax.swing.JTextField jText_marca;
