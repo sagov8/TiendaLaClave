@@ -7,7 +7,6 @@ package vista;
 
 import control.GestionarBase;
 import modelo.Proveedor;
-import modelo.Sonido;
 
 /**
  *

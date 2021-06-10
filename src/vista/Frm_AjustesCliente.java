@@ -17,6 +17,7 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
 
     GestionarBase base;
     String sql;
+
     public Frm_AjustesCliente() {
         initComponents();
         base = new GestionarBase();
@@ -271,7 +272,7 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
 
     private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
         base.conectar();
-        sql="select * from cliente where id_cliente = " + jText_Codigo.getText();
+        sql = "select * from cliente where id_cliente = " + jText_Codigo.getText();
         Cliente cliente = base.consultarCliente(sql);
         jText_Nombre_.setText(cliente.getNombre());
         jText_apellido_.setText(cliente.getApellidos());
@@ -282,17 +283,20 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
 
     private void jB_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ModificarActionPerformed
         base.conectar();
-        sql="update cliente set nombre='"+ jText_Nombre_.getText()
-                +"', apellidos= '"+jText_apellido_.getText()
-                +"', correo= '"+jText_correo_.getText()
-                +"', password= '"+jText_contraseña_.getText()
-                +"' where id_cliente= "+jText_Codigo.getText();
+        sql = "update cliente set nombre='" + jText_Nombre_.getText()
+                + "', apellidos= '" + jText_apellido_.getText()
+                + "', correo= '" + jText_correo_.getText()
+                + "', password= '" + jText_contraseña_.getText()
+                + "' where id_cliente= " + jText_Codigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jB_ModificarActionPerformed
 
     private void btn_eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar1ActionPerformed
-        // TODO add your handling code here:
+        base.conectar();
+        sql = "delete from cliente where id_cliente = " + jText_Codigo.getText();
+        base.ejecutarSentencia(sql);
+        base.desconectar();
     }//GEN-LAST:event_btn_eliminar1ActionPerformed
 
 

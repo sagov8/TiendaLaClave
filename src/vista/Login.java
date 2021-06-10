@@ -1,7 +1,7 @@
-
 package vista;
 
 import javax.swing.JOptionPane;
+import control.GestionInicioSesion;
 
 /**
  *
@@ -9,12 +9,12 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    boolean userIn = false;
+    GestionInicioSesion sesion;
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        sesion = new GestionInicioSesion();
     }
 
     /**
@@ -104,7 +104,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jB_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_SalirActionPerformed
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jB_SalirActionPerformed
 
     private void jText_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_UsuarioActionPerformed
@@ -116,17 +116,26 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPassword_ContraseñaActionPerformed
 
     private void jB_IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_IniciarSesionActionPerformed
-       String id= jText_Usuario.getText();
-        String contraseña= jPassword_Contraseña.getText();
-        
-        if(id.isEmpty() || contraseña.isEmpty()){ //Método que devuelve true en el caso de que el tamaño de la cadena sera 0. En otro caso devuelve false.
-            JOptionPane.showMessageDialog(null,"Algun espacio esta vacio");
-        }else{
-            if (id.equals("admin") && contraseña.equals("123456")){ //condicionamos el inicio de id y contraseña
-                JOptionPane.showMessageDialog(null,"BIENVENIDO ADMINISTRADOR:");
-                vistaTienda panel=new vistaTienda();// se llama el panel a que se va ingresar con un objeto
+        String id = jText_Usuario.getText();
+        String contraseña = jPassword_Contraseña.getText();
+
+        if (id.isEmpty() || contraseña.isEmpty()) { //Método que devuelve true en el caso de que el tamaño de la cadena sera 0. En otro caso devuelve false.
+            JOptionPane.showMessageDialog(null, "Algun espacio esta vacio");
+        } else {
+            if (id.equals("admin") && contraseña.equals("123456")) { //condicionamos el inicio de id y contraseña
+                JOptionPane.showMessageDialog(null, "BIENVENIDO ADMINISTRADOR:");
+                vistaTienda panel = new vistaTienda();// se llama el panel a que se va ingresar con un objeto
                 panel.setVisible(true);//visibilidad del panel
                 dispose();
+                userIn = true;
+                sesion.verificarLogin(userIn);
+            } else if (id.equals("user") && contraseña.equals("123456")) { //condicionamos el inicio de id y contraseña
+                JOptionPane.showMessageDialog(null, "BIENVENIDO Usuario:");
+                vistaTienda panel = new vistaTienda();// se llama el panel a que se va ingresar con un objeto
+                panel.setVisible(true);//visibilidad del panel
+                dispose();
+                userIn = false;
+                sesion.verificarLogin(userIn);
             }
         }
     }//GEN-LAST:event_jB_IniciarSesionActionPerformed
@@ -177,4 +186,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPassword_Contraseña;
     private javax.swing.JTextField jText_Usuario;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -266,7 +266,7 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
 
     private void jB_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ConsultarActionPerformed
         base.conectar();
-        sql="select * from cliente where id_cliente = " + jTCodigo.getText();
+        sql="select * from sonido where codigo = " + jTCodigo.getText();
         Sonido sonido = base.consultarSonido(sql);
         jTCodigo.setText(""+sonido.getCodigo());
         jTNombre.setText(sonido.getNombre());

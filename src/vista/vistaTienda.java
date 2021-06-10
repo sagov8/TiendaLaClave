@@ -5,7 +5,9 @@
  */
 package vista;
 
+import control.GestionInicioSesion;
 import control.GestionarBase;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,11 +16,23 @@ import control.GestionarBase;
 public class vistaTienda extends javax.swing.JFrame {
 
     GestionarBase base;
+    GestionInicioSesion sesion;
     String sql;
 
     public vistaTienda() {
         initComponents();
         base = new GestionarBase();
+        sesion = new GestionInicioSesion();
+        
+        if (!sesion.userActive()){
+            try{
+                menuRegistrar_.setEnabled(false);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "No se permite modificar al usuario");
+            }
+            
+        }
+        
     }
 
     /**
