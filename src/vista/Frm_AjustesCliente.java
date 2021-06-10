@@ -7,6 +7,7 @@ package vista;
 
 import control.GestionarBase;
 import javax.swing.text.JTextComponent;
+import modelo.Cliente;
 
 /**
  *
@@ -46,7 +47,8 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         jText_Codigo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jB_Modificar = new javax.swing.JButton();
-        btn_eliminar = new javax.swing.JButton();
+        btn_consultar = new javax.swing.JButton();
+        btn_eliminar1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -176,13 +178,23 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        btn_eliminar.setBackground(new java.awt.Color(235, 94, 40));
-        btn_eliminar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        btn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
-        btn_eliminar.setText("Eliminar");
-        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+        btn_consultar.setBackground(new java.awt.Color(235, 94, 40));
+        btn_consultar.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        btn_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Look-icon.png"))); // NOI18N
+        btn_consultar.setText("Consultar");
+        btn_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_eliminarActionPerformed(evt);
+                btn_consultarActionPerformed(evt);
+            }
+        });
+
+        btn_eliminar1.setBackground(new java.awt.Color(235, 94, 40));
+        btn_eliminar1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        btn_eliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminar.png"))); // NOI18N
+        btn_eliminar1.setText("Eliminar");
+        btn_eliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminar1ActionPerformed(evt);
             }
         });
 
@@ -193,20 +205,25 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jB_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jB_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(btn_eliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(131, 131, 131)
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -226,8 +243,9 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(btn_eliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
@@ -251,12 +269,16 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jText_CodigoActionPerformed
 
-    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
+    private void btn_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarActionPerformed
         base.conectar();
-        sql="delete from cliente where id_cliente = " + jText_Codigo.getText();
-        base.ejecutarSentencia(sql);
+        sql="select * from cliente where id_cliente = " + jText_Codigo.getText();
+        Cliente cliente = base.consultarCliente(sql);
+        jText_Nombre_.setText(cliente.getNombre());
+        jText_apellido_.setText(cliente.getApellidos());
+        jText_correo_.setText(cliente.getCorreo());
+        jText_contraseña_.setText(cliente.getPassword());
         base.desconectar();
-    }//GEN-LAST:event_btn_eliminarActionPerformed
+    }//GEN-LAST:event_btn_consultarActionPerformed
 
     private void jB_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ModificarActionPerformed
         base.conectar();
@@ -269,9 +291,14 @@ public class Frm_AjustesCliente extends javax.swing.JInternalFrame {
         base.desconectar();
     }//GEN-LAST:event_jB_ModificarActionPerformed
 
+    private void btn_eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_eliminar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_consultar;
+    private javax.swing.JButton btn_eliminar1;
     private javax.swing.JButton jB_Modificar;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -1,21 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
-/**
- *
- * @author Estudiante
- */
+import control.GestionarBase;
+
 public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmRegistrar_Sonido
-     */
+    GestionarBase base;
+    String sql;
+
     public FrmRegistrar_Sonido() {
         initComponents();
+        base = new GestionarBase();
     }
 
     /**
@@ -36,11 +31,11 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jText_nombreInstrumento_ = new javax.swing.JTextField();
-        jText_marca = new javax.swing.JTextField();
-        jText_color = new javax.swing.JTextField();
-        jText_precio = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTModelo = new javax.swing.JTextField();
+        jTMarca = new javax.swing.JTextField();
+        jTNombre = new javax.swing.JTextField();
+        jTPrecio = new javax.swing.JTextField();
+        JBRegistrar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -74,21 +69,21 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
         jLabel8.setText("Modelo:");
 
-        jText_marca.addActionListener(new java.awt.event.ActionListener() {
+        jTMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jText_marcaActionPerformed(evt);
+                jTMarcaActionPerformed(evt);
             }
         });
 
-        jText_color.addActionListener(new java.awt.event.ActionListener() {
+        jTNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jText_colorActionPerformed(evt);
+                jTNombreActionPerformed(evt);
             }
         });
 
-        jText_precio.addActionListener(new java.awt.event.ActionListener() {
+        jTPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jText_precioActionPerformed(evt);
+                jTPrecioActionPerformed(evt);
             }
         });
 
@@ -117,10 +112,10 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jText_nombreInstrumento_, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                        .addComponent(jText_marca)
-                        .addComponent(jText_precio))
-                    .addComponent(jText_color, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                        .addComponent(jTMarca)
+                        .addComponent(jTPrecio))
+                    .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53))
         );
         jPanel2Layout.setVerticalGroup(
@@ -129,31 +124,31 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jText_color, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jText_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jText_nombreInstrumento_, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jText_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(235, 94, 40));
-        jButton1.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JBRegistrar.setBackground(new java.awt.Color(235, 94, 40));
+        JBRegistrar.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        JBRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
+        JBRegistrar.setText("Registrar");
+        JBRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JBRegistrarActionPerformed(evt);
             }
         });
 
@@ -171,7 +166,7 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addComponent(jButton1)
+                        .addComponent(JBRegistrar)
                         .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -190,7 +185,7 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(104, 104, 104)
-                        .addComponent(jButton1)))
+                        .addComponent(JBRegistrar)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -199,25 +194,31 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jText_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_marcaActionPerformed
+    private void jTMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jText_marcaActionPerformed
+    }//GEN-LAST:event_jTMarcaActionPerformed
 
-    private void jText_colorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_colorActionPerformed
+    private void jTNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jText_colorActionPerformed
+    }//GEN-LAST:event_jTNombreActionPerformed
 
-    private void jText_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_precioActionPerformed
+    private void jTPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTPrecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jText_precioActionPerformed
+    }//GEN-LAST:event_jTPrecioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void JBRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBRegistrarActionPerformed
+        base.conectar();
+        sql = "insert into sonido(nombre, marca, referencia, precio) values('"
+                +jTNombre.getText()+"', '"
+                +jTMarca.getText()+"', '"
+                +jTModelo.getText()+"', '"
+                +jTPrecio.getText()+"')";
+        base.ejecutarSentencia(sql);
+    }//GEN-LAST:event_JBRegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton JBRegistrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -227,9 +228,9 @@ public class FrmRegistrar_Sonido extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jText_color;
-    private javax.swing.JTextField jText_marca;
-    private javax.swing.JTextField jText_nombreInstrumento_;
-    private javax.swing.JTextField jText_precio;
+    private javax.swing.JTextField jTMarca;
+    private javax.swing.JTextField jTModelo;
+    private javax.swing.JTextField jTNombre;
+    private javax.swing.JTextField jTPrecio;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,14 +16,16 @@ import modelo.Instrumento;
  * @author Estudiante
  */
 public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
+
     GestionarBase base;
     String sql;
+
     /**
      * Creates new form Frm_RegistroInstrumentosVyC
      */
     public Frm_ConsultaInstrumentosVyC() {
         initComponents();
-        
+
         base = new GestionarBase();
     }
 
@@ -52,7 +54,6 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jText_Id_Instrumento = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable_consultarInstrumentoscuerda = new javax.swing.JTable();
         jBu_consultar = new javax.swing.JButton();
@@ -165,7 +166,7 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(53, 79, 82), 4, true));
 
         jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel4.setText("Código:");
+        jLabel4.setText("Instrumentos");
 
         jLabel10.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
 
@@ -203,30 +204,27 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92)
                         .addComponent(jLabel10))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jText_Id_Instrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jText_Id_Instrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jLabel10)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         jBu_consultar.setBackground(new java.awt.Color(235, 94, 40));
@@ -293,23 +291,23 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jText_precioActionPerformed
 
     private void jBu_consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBu_consultarActionPerformed
-         base.conectar();
+        base.conectar();
         sql = "select * from instrumentos_cuerda";
         List<Instrumento> listainstrumento = base.consultarTodosInstrumentosCyV(sql);
-        
+
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("codigo");
         model.addColumn("nombre");
         model.addColumn("marca");
         model.addColumn("color");
         model.addColumn("precio");
-        
-        for (Instrumento instrumento: listainstrumento){
-            model.addRow(new Object[]{instrumento.getCodigo(),instrumento.getNombredelInstrumento(),
-                instrumento.getMarca(),instrumento.getColor(),instrumento.getPrecio()});
+
+        for (Instrumento instrumento : listainstrumento) {
+            model.addRow(new Object[]{instrumento.getCodigo(), instrumento.getNombredelInstrumento(),
+                instrumento.getMarca(), instrumento.getColor(), instrumento.getPrecio()});
             jTable_consultarInstrumentoscuerda.setModel(model);
         }
-        base.desconectar();  
+        base.desconectar();
     }//GEN-LAST:event_jBu_consultarActionPerformed
 
 
@@ -329,7 +327,6 @@ public class Frm_ConsultaInstrumentosVyC extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable_consultarInstrumentoscuerda;
-    private javax.swing.JTextField jText_Id_Instrumento;
     private javax.swing.JTextField jText_color;
     private javax.swing.JTextField jText_marca;
     private javax.swing.JTextField jText_nombreInstrumento_;

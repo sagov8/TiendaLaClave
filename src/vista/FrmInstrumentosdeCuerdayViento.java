@@ -12,16 +12,15 @@ import control.GestionarBase;
  * @author Estudiante
  */
 public class FrmInstrumentosdeCuerdayViento extends javax.swing.JInternalFrame {
-     GestionarBase base;
+
+    GestionarBase base;
     String sql;
 
-   
     public FrmInstrumentosdeCuerdayViento() {
         initComponents();
         base = new GestionarBase();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -219,12 +218,12 @@ public class FrmInstrumentosdeCuerdayViento extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jText_precioActionPerformed
 
     private void jB_RegistrarInstrumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_RegistrarInstrumentoActionPerformed
-         base.conectar();
+        base.conectar();
         sql = "insert into instrumentos_cuerda(nombre_Instrumento, marca, color, precio) values('"
-                +jText_nombreInstrumento_.getText()+"', '"
-                +jText_marca.getText()+"', '"
-                +jText_color.getText()+"', '"
-                +jText_precio.getText()+"')";
+                + jText_nombreInstrumento_.getText() + "', '"
+                + jText_marca.getText() + "', '"
+                + jText_color.getText() + "', '"
+                + jText_precio.getText() + "')";
         base.ejecutarSentencia(sql);
     }//GEN-LAST:event_jB_RegistrarInstrumentoActionPerformed
 

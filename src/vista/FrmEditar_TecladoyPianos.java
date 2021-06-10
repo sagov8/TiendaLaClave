@@ -6,13 +6,15 @@
 package vista;
 
 import control.GestionarBase;
+import modelo.PianoyTeclados;
 
 /**
  *
  * @author Estudiante
  */
 public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
-      GestionarBase base;
+
+    GestionarBase base;
     String sql;
 
     /**
@@ -20,7 +22,7 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
      */
     public FrmEditar_TecladoyPianos() {
         initComponents();
-         base = new GestionarBase();
+        base = new GestionarBase();
     }
 
     /**
@@ -49,6 +51,7 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jBModificarTyP_ = new javax.swing.JButton();
         jBuEliminarTyP_ = new javax.swing.JButton();
+        jBConsultar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -190,26 +193,38 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
             }
         });
 
+        jBConsultar.setBackground(new java.awt.Color(235, 94, 40));
+        jBConsultar.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        jBConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Look-icon.png"))); // NOI18N
+        jBConsultar.setText("Consultar");
+        jBConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBConsultarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(179, 179, 179)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jBConsultar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBModificarTyP_)
-                        .addGap(73, 73, 73)
+                        .addGap(87, 87, 87)
                         .addComponent(jBuEliminarTyP_)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,11 +235,12 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBuEliminarTyP_)
                     .addComponent(jBModificarTyP_)
-                    .addComponent(jBuEliminarTyP_))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(jBConsultar))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
@@ -245,25 +261,37 @@ public class FrmEditar_TecladoyPianos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jText_marcaActionPerformed
 
     private void jBModificarTyP_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarTyP_ActionPerformed
-          base.conectar();
-        sql="update pianos_y_teclados set nombre_Instrumento_='"+jText_NombreInstrumento.getText()
-                +"', marca_= '"+jText_marca.getText()
-                +"', color_= '"+jText_color.getText()
-                +"', precio_= '"+jText_precio.getText()
-                +"' where codigo= "+jText_Codigo.getText();
+        base.conectar();
+        sql = "update pianos_y_teclados set nombre_Instrumento_='" + jText_NombreInstrumento.getText()
+                + "', marca_= '" + jText_marca.getText()
+                + "', color_= '" + jText_color.getText()
+                + "', precio_= '" + jText_precio.getText()
+                + "' where codigo= " + jText_Codigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jBModificarTyP_ActionPerformed
 
     private void jBuEliminarTyP_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuEliminarTyP_ActionPerformed
-         base.conectar();
-        sql="delete from pianos_y_teclados where codigo = " + jText_Codigo.getText();
+        base.conectar();
+        sql = "delete from pianos_y_teclados where codigo = " + jText_Codigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jBuEliminarTyP_ActionPerformed
 
+    private void jBConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConsultarActionPerformed
+        base.conectar();
+        sql = "select * from pianos_y_teclados where codigo = " + jText_Codigo.getText();
+        PianoyTeclados piano = base.consultarPiano(sql);
+        jText_NombreInstrumento.setText(piano.getNombredelInstrumento());
+        jText_marca.setText(piano.getMarca());
+        jText_color.setText(piano.getColor());
+        jText_precio.setText(""+piano.getPrecio());
+        base.desconectar();
+    }//GEN-LAST:event_jBConsultarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBConsultar;
     private javax.swing.JButton jBModificarTyP_;
     private javax.swing.JButton jBuEliminarTyP_;
     private javax.swing.JLabel jLabel2;

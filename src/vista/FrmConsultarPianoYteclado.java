@@ -1,9 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
+
+import control.GestionarBase;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import modelo.Instrumento;
+import modelo.PianoyTeclados;
 
 /**
  *
@@ -11,11 +13,11 @@ package vista;
  */
 public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmConsultarPianoYteclado
-     */
+    GestionarBase base;
+    String sql;
     public FrmConsultarPianoYteclado() {
         initComponents();
+        base = new GestionarBase();
     }
 
     /**
@@ -31,9 +33,8 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jText_Codigo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTPianos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jBu_consultarTyp = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -51,20 +52,14 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(53, 79, 82), 4, true));
 
         jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel3.setText("Código");
+        jLabel3.setText("Pianos");
 
         jLabel6.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
 
-        jText_Codigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jText_CodigoActionPerformed(evt);
-            }
-        });
-
         jScrollPane1.setBackground(new java.awt.Color(235, 94, 40));
 
-        jTable1.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTPianos.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jTPianos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -84,25 +79,22 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionForeground(new java.awt.Color(235, 94, 40));
-        jScrollPane1.setViewportView(jTable1);
+        jTPianos.setSelectionForeground(new java.awt.Color(235, 94, 40));
+        jScrollPane1.setViewportView(jTPianos);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel3)
-                        .addGap(47, 47, 47)
-                        .addComponent(jText_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -113,13 +105,11 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
                         .addGap(144, 144, 144)
                         .addComponent(jLabel6))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jText_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(38, 38, 38)
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
@@ -153,7 +143,7 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jBu_consultarTyp))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
@@ -182,12 +172,24 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jText_CodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jText_CodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jText_CodigoActionPerformed
-
     private void jBu_consultarTypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBu_consultarTypActionPerformed
-        // TODO add your handling code here:
+        base.conectar();
+        sql = "select * from pianos_y_teclados";
+        List<PianoyTeclados> listaPianos = base.consultarTodoPianoYTec(sql);
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("codigo");
+        model.addColumn("nombre");
+        model.addColumn("marca");
+        model.addColumn("color");
+        model.addColumn("precio");
+
+        for (PianoyTeclados piano: listaPianos) {
+            model.addRow(new Object[]{piano.getCodigo(), piano.getNombredelInstrumento(),
+                piano.getMarca(), piano.getColor(), piano.getPrecio()});
+            jTPianos.setModel(model);
+        }
+        base.desconectar();
     }//GEN-LAST:event_jBu_consultarTypActionPerformed
 
 
@@ -200,7 +202,6 @@ public class FrmConsultarPianoYteclado extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jText_Codigo;
+    private javax.swing.JTable jTPianos;
     // End of variables declaration//GEN-END:variables
 }

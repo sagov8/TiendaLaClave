@@ -15,6 +15,7 @@ public class vistaTienda extends javax.swing.JFrame {
 
     GestionarBase base;
     String sql;
+
     public vistaTienda() {
         initComponents();
         base = new GestionarBase();
@@ -55,9 +56,9 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu_ConsultarSonido = new javax.swing.JMenuItem();
         jMenu_EditarSonido = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
-        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenuRegistrarProv = new javax.swing.JMenuItem();
+        jMenuConsultarProv = new javax.swing.JMenuItem();
+        jMenuAjustesProv = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
@@ -281,33 +282,38 @@ public class vistaTienda extends javax.swing.JFrame {
         jMenu5.setText("Proveedores");
         jMenu5.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
 
-        jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem17.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
-        jMenuItem17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
-        jMenuItem17.setText("Registrar");
-        jMenu5.add(jMenuItem17);
-
-        jMenuItem20.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem20.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
-        jMenuItem20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
-        jMenuItem20.setText("Consultar");
-        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+        jMenuRegistrarProv.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuRegistrarProv.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenuRegistrarProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
+        jMenuRegistrarProv.setText("Registrar");
+        jMenuRegistrarProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem20ActionPerformed(evt);
+                jMenuRegistrarProvActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem20);
+        jMenu5.add(jMenuRegistrarProv);
 
-        jMenuItem18.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem18.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
-        jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
-        jMenuItem18.setText("Ajustes");
-        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+        jMenuConsultarProv.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuConsultarProv.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenuConsultarProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar.png"))); // NOI18N
+        jMenuConsultarProv.setText("Consultar");
+        jMenuConsultarProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem18ActionPerformed(evt);
+                jMenuConsultarProvActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem18);
+        jMenu5.add(jMenuConsultarProv);
+
+        jMenuAjustesProv.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuAjustesProv.setFont(new java.awt.Font("Rockwell Condensed", 0, 16)); // NOI18N
+        jMenuAjustesProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ajustes.png"))); // NOI18N
+        jMenuAjustesProv.setText("Ajustes");
+        jMenuAjustesProv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAjustesProvActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuAjustesProv);
 
         jMenuBar1.add(jMenu5);
 
@@ -317,93 +323,103 @@ public class vistaTienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenu_consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_consultar_ActionPerformed
-      Frm_ConsultarCliente panel= new Frm_ConsultarCliente(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
-      
+        Frm_ConsultarCliente panel = new Frm_ConsultarCliente(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
+
     }//GEN-LAST:event_jMenu_consultar_ActionPerformed
 
     private void jMenu_Registrarse_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Registrarse_ActionPerformed
-      FrmClientes panel= new FrmClientes(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
-      
+        FrmClientes panel = new FrmClientes(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
+
     }//GEN-LAST:event_jMenu_Registrarse_ActionPerformed
 
     private void jMenu_AjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_AjustesActionPerformed
-       Frm_AjustesCliente panel= new Frm_AjustesCliente(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        Frm_AjustesCliente panel = new Frm_AjustesCliente(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_AjustesActionPerformed
 
     private void jMenu_ConsultarInstrumento_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_ConsultarInstrumento_ActionPerformed
-       Frm_ConsultaInstrumentosVyC panel= new Frm_ConsultaInstrumentosVyC(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        Frm_ConsultaInstrumentosVyC panel = new Frm_ConsultaInstrumentosVyC(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_ConsultarInstrumento_ActionPerformed
 
     private void jMenu_RegistrarSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_RegistrarSonidoActionPerformed
-      FrmRegistrar_Sonido panel= new FrmRegistrar_Sonido(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        FrmRegistrar_Sonido panel = new FrmRegistrar_Sonido(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_RegistrarSonidoActionPerformed
 
     private void jMenu_EditarSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_EditarSonidoActionPerformed
-      FrmEditar_Sonido panel= new FrmEditar_Sonido(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        FrmEditar_Sonido panel = new FrmEditar_Sonido(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_EditarSonidoActionPerformed
 
-    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem18ActionPerformed
+    private void jMenuAjustesProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAjustesProvActionPerformed
+        FrmEditar_Proveedor panel = new FrmEditar_Proveedor();
+        escritorio.add(panel);
+        panel.show();
+    }//GEN-LAST:event_jMenuAjustesProvActionPerformed
 
-    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem20ActionPerformed
+    private void jMenuConsultarProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuConsultarProvActionPerformed
+        FrmConsultarProveedor panel = new FrmConsultarProveedor();
+        escritorio.add(panel);
+        panel.show();
+    }//GEN-LAST:event_jMenuConsultarProvActionPerformed
 
     private void jMenu_salir_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_salir_ActionPerformed
-      System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jMenu_salir_ActionPerformed
 
     private void jMenu_RegistrarInstrumento_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_RegistrarInstrumento_ActionPerformed
-     FrmInstrumentosdeCuerdayViento panel= new FrmInstrumentosdeCuerdayViento(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
-      
+        FrmInstrumentosdeCuerdayViento panel = new FrmInstrumentosdeCuerdayViento(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
+
     }//GEN-LAST:event_jMenu_RegistrarInstrumento_ActionPerformed
 
     private void jMenu_editarIstrumentos_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_editarIstrumentos_ActionPerformed
-       Editar_Instrumentos   panel= new Editar_Instrumentos(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
-      
+        Editar_Instrumentos panel = new Editar_Instrumentos(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
+
     }//GEN-LAST:event_jMenu_editarIstrumentos_ActionPerformed
 
     private void jMeu_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMeu_editarActionPerformed
-      FrmEditar_TecladoyPianos  panel= new FrmEditar_TecladoyPianos(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
-      
+        FrmEditar_TecladoyPianos panel = new FrmEditar_TecladoyPianos(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
+
     }//GEN-LAST:event_jMeu_editarActionPerformed
 
     private void jMenu_RegistrarTyP_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_RegistrarTyP_ActionPerformed
-       FrmInstrumentosTecladoyPiano  panel= new FrmInstrumentosTecladoyPiano(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        FrmInstrumentosTecladoyPiano panel = new FrmInstrumentosTecladoyPiano(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_RegistrarTyP_ActionPerformed
 
     private void jMenu_ConsultarPyT_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_ConsultarPyT_ActionPerformed
-        FrmConsultarPianoYteclado  panel= new FrmConsultarPianoYteclado(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        FrmConsultarPianoYteclado panel = new FrmConsultarPianoYteclado(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_ConsultarPyT_ActionPerformed
 
     private void jMenu_ConsultarSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_ConsultarSonidoActionPerformed
-         FrmConsultar_Sonido panel= new FrmConsultar_Sonido(); //mostrar la ventana en el escritorio
-      escritorio.add(panel);
-      panel.show();
+        FrmConsultar_Sonido panel = new FrmConsultar_Sonido(); //mostrar la ventana en el escritorio
+        escritorio.add(panel);
+        panel.show();
     }//GEN-LAST:event_jMenu_ConsultarSonidoActionPerformed
+
+    private void jMenuRegistrarProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuRegistrarProvActionPerformed
+        FrmRegistrarProveedor panel = new FrmRegistrarProveedor();
+        escritorio.add(panel);
+        panel.show();
+    }//GEN-LAST:event_jMenuRegistrarProvActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,10 +465,10 @@ public class vistaTienda extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuItem jMenuAjustesProv;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuConsultarProv;
+    private javax.swing.JMenuItem jMenuRegistrarProv;
     private javax.swing.JMenuItem jMenu_Ajustes;
     private javax.swing.JMenuItem jMenu_ConsultarInstrumento_;
     private javax.swing.JMenuItem jMenu_ConsultarPyT_;

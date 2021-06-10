@@ -6,17 +6,19 @@
 package vista;
 
 import control.GestionarBase;
+import modelo.Proveedor;
 import modelo.Sonido;
 
 /**
  *
  * @author Estudiante
  */
-public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
+public class FrmEditar_Proveedor extends javax.swing.JInternalFrame {
 
     GestionarBase base;
     String sql;
-    public FrmEditar_Sonido() {
+
+    public FrmEditar_Proveedor() {
         initComponents();
         base = new GestionarBase();
     }
@@ -38,14 +40,12 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTModelo = new javax.swing.JTextField();
-        jTMarca = new javax.swing.JTextField();
+        jTApellido = new javax.swing.JTextField();
+        jTCorreo = new javax.swing.JTextField();
         jTNombre = new javax.swing.JTextField();
-        jTPrecio = new javax.swing.JTextField();
+        jTTelefono = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTCodigo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jB_Modificar = new javax.swing.JButton();
         jB_Eliminar = new javax.swing.JButton();
         jB_Consultar = new javax.swing.JButton();
@@ -61,7 +61,7 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(235, 94, 40));
-        jLabel2.setText("Editar");
+        jLabel2.setText("Editar Proveedor");
 
         jPanel2.setBackground(new java.awt.Color(173, 181, 189));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(53, 79, 82), 4, true));
@@ -70,19 +70,19 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
         jLabel3.setText("Nombre:");
 
         jLabel5.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel5.setText("Marca:");
+        jLabel5.setText("Correo:");
 
         jLabel6.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel7.setText("Precio:");
+        jLabel7.setText("Telefono");
 
         jLabel8.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel8.setText("Modelo:");
+        jLabel8.setText("Apellido:");
 
-        jTMarca.addActionListener(new java.awt.event.ActionListener() {
+        jTCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTMarcaActionPerformed(evt);
+                jTCorreoActionPerformed(evt);
             }
         });
 
@@ -92,14 +92,14 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
             }
         });
 
-        jTPrecio.addActionListener(new java.awt.event.ActionListener() {
+        jTTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTPrecioActionPerformed(evt);
+                jTTelefonoActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
-        jLabel4.setText("Código");
+        jLabel4.setText("ID");
 
         jTCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,59 +115,55 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6))
-                        .addGap(0, 39, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(55, 55, 55)
-                        .addComponent(jTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(160, 160, 160))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jTCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 23, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(jTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jTPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86))
         );
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mircrofono.png"))); // NOI18N
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrarin.png"))); // NOI18N
 
         jB_Modificar.setBackground(new java.awt.Color(235, 94, 40));
         jB_Modificar.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
@@ -209,14 +205,6 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jLabel1)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel2)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel9)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jB_Consultar)
                         .addGap(73, 73, 73)
@@ -224,15 +212,16 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jB_Eliminar)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(137, 137, 137))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -248,17 +237,17 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTMarcaActionPerformed
+    private void jTCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTMarcaActionPerformed
+    }//GEN-LAST:event_jTCorreoActionPerformed
 
     private void jTNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTNombreActionPerformed
 
-    private void jTPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTPrecioActionPerformed
+    private void jTTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTPrecioActionPerformed
+    }//GEN-LAST:event_jTTelefonoActionPerformed
 
     private void jTCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCodigoActionPerformed
         // TODO add your handling code here:
@@ -266,30 +255,30 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
 
     private void jB_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ConsultarActionPerformed
         base.conectar();
-        sql="select * from cliente where id_cliente = " + jTCodigo.getText();
-        Sonido sonido = base.consultarSonido(sql);
-        jTCodigo.setText(""+sonido.getCodigo());
-        jTNombre.setText(sonido.getNombre());
-        jTMarca.setText(sonido.getMarca());
-        jTModelo.setText(sonido.getReferencia());
-        jTPrecio.setText(""+sonido.getPrecio());
+        sql = "select * from proveedor where id_proveedor = " + jTCodigo.getText();
+        Proveedor proveedor = base.consultarProveedor(sql);
+        jTCodigo.setText("" + proveedor.getIdProveedor());
+        jTNombre.setText(proveedor.getNombre());
+        jTApellido.setText(proveedor.getApellido());
+        jTCorreo.setText(proveedor.getCorreo());
+        jTTelefono.setText("" + proveedor.getTelefono());
         base.desconectar();
     }//GEN-LAST:event_jB_ConsultarActionPerformed
 
     private void jB_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ModificarActionPerformed
         base.conectar();
-        sql = "update sonido set nombre='" + jTNombre.getText()
-                + "', marca= '" + jTMarca.getText()
-                + "', referencia= '" + jTModelo.getText()
-                + "', precio= '" + jTPrecio.getText()
-                + "' where codigo= " + jTCodigo.getText();
+        sql = "update proveedor set nombre='" + jTNombre.getText()
+                + "', apellido= '" + jTApellido.getText()
+                + "', correo= '" + jTCorreo.getText()
+                + "', telefono= '" + jTTelefono.getText()
+                + "' where id_proveedor= " + jTCodigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jB_ModificarActionPerformed
 
     private void jB_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_EliminarActionPerformed
         base.conectar();
-        sql = "delete from sonido where codigo = " + jTCodigo.getText();
+        sql = "delete from proveedor where id_proveedor = " + jTCodigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jB_EliminarActionPerformed
@@ -299,7 +288,6 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
     private javax.swing.JButton jB_Consultar;
     private javax.swing.JButton jB_Eliminar;
     private javax.swing.JButton jB_Modificar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -307,13 +295,12 @@ public class FrmEditar_Sonido extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTApellido;
     private javax.swing.JTextField jTCodigo;
-    private javax.swing.JTextField jTMarca;
-    private javax.swing.JTextField jTModelo;
+    private javax.swing.JTextField jTCorreo;
     private javax.swing.JTextField jTNombre;
-    private javax.swing.JTextField jTPrecio;
+    private javax.swing.JTextField jTTelefono;
     // End of variables declaration//GEN-END:variables
 }

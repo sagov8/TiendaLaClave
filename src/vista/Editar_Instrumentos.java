@@ -6,21 +6,20 @@
 package vista;
 
 import control.GestionarBase;
+import modelo.Instrumento;
 
 /**
  *
  * @author Estudiante
  */
 public class Editar_Instrumentos extends javax.swing.JInternalFrame {
- GestionarBase base;
+
+    GestionarBase base;
     String sql;
 
-    /**
-     * Creates new form Editar_Instrumentos
-     */
     public Editar_Instrumentos() {
         initComponents();
-         base = new GestionarBase();
+        base = new GestionarBase();
     }
 
     /**
@@ -50,6 +49,7 @@ public class Editar_Instrumentos extends javax.swing.JInternalFrame {
         jB_EliminarInstrumento = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jB_Consultar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -186,29 +186,41 @@ public class Editar_Instrumentos extends javax.swing.JInternalFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrarin.png"))); // NOI18N
 
+        jB_Consultar.setBackground(new java.awt.Color(235, 94, 40));
+        jB_Consultar.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        jB_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Look-icon.png"))); // NOI18N
+        jB_Consultar.setText("Consultar");
+        jB_Consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_ConsultarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addGap(122, 122, 122))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(53, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jB_Consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jB_ModificarInstrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addComponent(jB_EliminarInstrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(jB_EliminarInstrumento, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,14 +237,12 @@ public class Editar_Instrumentos extends javax.swing.JInternalFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jB_EliminarInstrumento))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jB_ModificarInstrumento)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jB_ModificarInstrumento)
+                    .addComponent(jB_EliminarInstrumento)
+                    .addComponent(jB_Consultar))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
@@ -253,25 +263,37 @@ public class Editar_Instrumentos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jText_precioActionPerformed
 
     private void jB_EliminarInstrumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_EliminarInstrumentoActionPerformed
-       base.conectar();
-        sql="delete from instrumentos_cuerda where codigo = " + jText_codigo.getText();
+        base.conectar();
+        sql = "delete from instrumentos_cuerda where codigo = " + jText_codigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jB_EliminarInstrumentoActionPerformed
 
     private void jB_ModificarInstrumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ModificarInstrumentoActionPerformed
-       base.conectar();
-        sql="update instrumentos_cuerda set nombre_Instrumento='"+jText_nombreInstrumento_ .getText()
-                +"', marca= '"+jText_marca.getText()
-                +"', color= '"+jText_color.getText()
-                +"', precio= '"+jText_precio.getText()
-                +"' where codigo= "+jText_codigo.getText();
+        base.conectar();
+        sql = "update instrumentos_cuerda set nombre_Instrumento='" + jText_nombreInstrumento_.getText()
+                + "', marca= '" + jText_marca.getText()
+                + "', color= '" + jText_color.getText()
+                + "', precio= '" + jText_precio.getText()
+                + "' where codigo= " + jText_codigo.getText();
         base.ejecutarSentencia(sql);
         base.desconectar();
     }//GEN-LAST:event_jB_ModificarInstrumentoActionPerformed
 
+    private void jB_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ConsultarActionPerformed
+        base.conectar();
+        sql = "select * from instrumentos_cuerda where codigo = " + jText_codigo.getText();
+        Instrumento instrumento = base.consultarInstrumento(sql);
+        jText_nombreInstrumento_.setText(instrumento.getNombredelInstrumento());
+        jText_marca.setText(instrumento.getMarca());
+        jText_color.setText(instrumento.getColor());
+        jText_precio.setText(""+instrumento.getPrecio());
+        base.desconectar();
+    }//GEN-LAST:event_jB_ConsultarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jB_Consultar;
     private javax.swing.JButton jB_EliminarInstrumento;
     private javax.swing.JButton jB_ModificarInstrumento;
     private javax.swing.JLabel jLabel1;

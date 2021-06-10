@@ -4,11 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/FrmClientes.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/Frm_AjustesCliente.java</file>
             <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/Frm_ConsultarCliente.java</file>
             <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/control/GestionarBase.java</file>
             <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/Login.java</file>
             <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/vistaTienda.java</file>
-            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/control/Conectar_Base.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/modelo/Cliente.java</file>
+            <file>file:/home/sagov8/Documentos/GitHub/TiendaLaClave/src/vista/Frm_ConsultaInstrumentosVyC.java</file>
         </group>
     </open-files>
 </project-private>
